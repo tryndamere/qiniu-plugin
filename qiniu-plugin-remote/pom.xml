@@ -11,5 +11,13 @@
 
     <artifactId>qiniu-plugin-remote</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.fc</groupId>
+            <artifactId>platform-commons</artifactId>
+            <version>1.0.0-RELEASE</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

@@ -2,9 +2,7 @@ package com.mll.provider.plugin.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.TextScore;
 
 /**
  * Created by rocky on 2015/12/10.
@@ -15,7 +13,7 @@ public class FileInfo {
     @Id
     private String id;
 
-    private String originFileName;
+    private String fileName;
 
     @Indexed(unique = true)
     private String url;
@@ -65,12 +63,12 @@ public class FileInfo {
         this.id = id;
     }
 
-    public String getOriginFileName() {
-        return originFileName;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setOriginFileName(String originFileName) {
-        this.originFileName = originFileName;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getUrl() {
