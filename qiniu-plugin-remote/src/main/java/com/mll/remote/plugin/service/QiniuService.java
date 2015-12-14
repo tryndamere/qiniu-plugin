@@ -29,6 +29,6 @@ public interface QiniuService {
      * @param url
      * @param sysCode
      */
-    void deleteFileInfo(String url , String sysCode);
+    Integer deleteFileInfo(String url , String sysCode);
 
 }

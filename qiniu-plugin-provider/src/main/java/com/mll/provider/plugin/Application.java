@@ -1,5 +1,6 @@
 package com.mll.provider.plugin;
 
+import com.mll.provider.plugin.config.AuthWrap;
 import com.mll.provider.plugin.config.QiniuProperties;
 import com.qiniu.util.Auth;
 import org.springframework.boot.SpringApplication;
@@ -22,10 +23,8 @@ public class Application {
     }
 
     @Bean
-    public Auth auth(QiniuProperties qiniuProperties) {
-        Auth auth = Auth.create(qiniuProperties.getAccessKey(), qiniuProperties.getSecretKey());
-        auth.uploadToken(qiniuProperties.getBucket());
-        return auth;
+    public AuthWrap getAuthWrap(QiniuProperties qiniuProperties) {
+        return new AuthWrap(qiniuProperties);
     }
 
 }
