@@ -7,6 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -15,6 +18,8 @@ import java.util.concurrent.CountDownLatch;
  */
 @SpringBootApplication(scanBasePackages = {"com.mll"})
 @EnableConfigurationProperties(QiniuProperties.class)
+@EnableMongoRepositories(basePackages = "com.mll.provider.plugin.repository")
+@ImportResource(value = "classpath:dubbo.xml")
 public class Application {
 
     public static void main(String[] args) throws InterruptedException {

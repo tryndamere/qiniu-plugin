@@ -1,6 +1,7 @@
 package com.mll.provider.plugin.config;
 
 import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
@@ -23,6 +24,8 @@ public class AuthWrap implements DisposableBean , InitializingBean {
     @Override
     public void destroy() throws Exception {
         this.qiniuProperties = null;
+        this.auth = null;
+        this.token = null;
     }
 
     @Override

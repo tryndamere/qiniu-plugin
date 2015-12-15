@@ -22,6 +22,32 @@ public class FileInfoRequest implements Serializable {
      */
     private String sysCode;
 
+    /**
+     * 宽度
+     */
+    private int width;
+
+    /**
+     * 高度
+     */
+    private int height;
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
     public String getSysCode() {
         return sysCode;
     }
